@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The color when activated/focused (usually your app's accent color) -->
+    <item android:color="#CCC" android:state_activated="true" />
+
+    <!-- The color when not activated/focused (usually grey) -->
+    <item android:color="#333" />
+
+</selector>
