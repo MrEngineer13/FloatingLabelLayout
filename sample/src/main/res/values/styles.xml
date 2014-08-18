@@ -5,4 +5,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="TextAppearance.FLL.FloatLabel.Blue" parent="android:TextAppearance.Small">
+        <item name="android:textColor">@drawable/blue_float_label</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>

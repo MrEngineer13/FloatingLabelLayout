@@ -5,5 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="account_username_hint">Username</string>
     <string name="account_password_hint">Password</string>
+    <string name="txt_trigger_hint">Text trigger EditText</string>
+    <string name="focus_trigger_hint">Focus trigger EditText</string>
+    <string name="fav_hero_hint">Who is your favorite super hero?</string>
+    <string name="fav_villain_hint">Who is your favorite villain?</string>
 
 </resources>
