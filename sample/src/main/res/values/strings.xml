@@ -9,5 +9,6 @@
     <string name="focus_trigger_hint">Focus trigger EditText</string>
     <string name="fav_hero_hint">Who is your favorite super hero?</string>
     <string name="fav_villain_hint">Who is your favorite villain?</string>
+    <string name="prog_gen_header">Programmatically generated section</string>
 
 </resources>

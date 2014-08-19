@@ -14,9 +14,9 @@
 # Usage
 1. Add *floatinglabel* module as a dependency to your project
 
-2. Add the following to your xml:
+2a. Either add the following to your xml:
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             xmlns:fll="http://schemas.android.com/apk/res-auto"
             android:id="@+id/fll_username"
             android:layout_width="match_parent"
@@ -35,7 +35,11 @@
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/edit_password" />
     
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
+        
+2b. or if you want to create one programmatically then use
+
+     FloatingLabelEditText floatingLabelEditText = new FloatingLabelEditText(Activity.this);
         
 
 # Known Bugs

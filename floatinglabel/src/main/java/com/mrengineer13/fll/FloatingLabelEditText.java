@@ -44,7 +44,7 @@ import com.nineoldandroids.view.ViewPropertyAnimator;
  * @see <a href="https://dribbble.com/shots/1254439--GIF-Mobile-Form-Interaction">Matt D. Smith on Dribble</a>
  * @see <a href="http://bradfrostweb.com/blog/post/float-label-pattern/">Brad Frost's blog post</a>
  */
-class FloatingLabelLayout extends FrameLayout {
+public class FloatingLabelEditText extends FrameLayout {
 
     private static final long ANIMATION_DURATION = 150;
     private static final float DEFAULT_PADDING_LEFT_RIGHT_DP = 12f;
@@ -55,20 +55,20 @@ class FloatingLabelLayout extends FrameLayout {
     public static final String SAVED_TRIGGER = "SAVED_TRIGGER";
     public static final String SAVED_FOCUS = "SAVED_FOCUS";
 
-    private EditText mEditText;
+    private EditText mEditText = null;
     private TextView mLabel;
     private Trigger mTrigger;
     private CharSequence mHint;
 
-    public FloatingLabelLayout(Context context) {
+    public FloatingLabelEditText(Context context) {
         this(context, null);
     }
 
-    public FloatingLabelLayout(Context context, AttributeSet attrs) {
+    public FloatingLabelEditText(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public FloatingLabelLayout(Context context, AttributeSet attrs, int defStyle) {
+    public FloatingLabelEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         final TypedArray a = context
@@ -86,29 +86,34 @@ class FloatingLabelLayout extends FrameLayout {
                         android.R.style.TextAppearance_Small)
         );
 
+        EditText edit = new EditText(context);
+        edit.setPadding(sidePadding, 0, sidePadding, 0);
+
         int triggerInt = a.getInt(R.styleable.FloatingLabelLayout_floatLabelTrigger, Trigger.TYPE.getValue());
         mTrigger = Trigger.fromValue(triggerInt);
 
-        addView(mLabel, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        this.addView(mLabel, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        this.addView(edit, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 
         a.recycle();
     }
 
 
     @Override
-    protected Parcelable onSaveInstanceState() {
+    public Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
         bundle.putParcelable(SAVED_SUPER_STATE, super.onSaveInstanceState());
         bundle.putInt(SAVED_LABEL_VISIBILITY, mLabel.getVisibility());
         bundle.putCharSequence(SAVED_HINT, mHint);
         bundle.putInt(SAVED_TRIGGER, mTrigger.getValue());
         bundle.putBoolean(SAVED_FOCUS, getEditText().isFocused());
+        bundle.putCharSequence("SAVED_TEXT", getText());
         return bundle;
     }
 
     @SuppressWarnings("ResourceType")
     @Override
-    protected void onRestoreInstanceState(Parcelable state) {
+    public void onRestoreInstanceState(Parcelable state) {
         if (state instanceof Bundle) {
             Bundle bundle = (Bundle) state;
 
@@ -131,6 +136,7 @@ class FloatingLabelLayout extends FrameLayout {
                 }
             }
 
+            mEditText.setText(bundle.getCharSequence("SAVED_TEXT"));
             // retrieve super state
             state = bundle.getParcelable(SAVED_SUPER_STATE);
         }
@@ -141,9 +147,9 @@ class FloatingLabelLayout extends FrameLayout {
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
         if (child instanceof EditText) {
             // If we already have an EditText, throw an exception
-            if (mEditText != null) {
+            /*if (mEditText != null) {
                 throw new IllegalArgumentException("We already have an EditText, can only have one");
-            }
+            }*/
 
             // Update the layout params so that the EditText is at the bottom, with enough top
             // margin to show the label
@@ -296,7 +302,7 @@ class FloatingLabelLayout extends FrameLayout {
 
             if (TextUtils.isEmpty(s)) {
                 hideLabel();
-            } else {
+            } else if (!getLabel().isShown()) {
                 showLabel();
             }
         }

@@ -7,11 +7,12 @@
 
     <LinearLayout
         android:orientation="vertical"
+        android:id="@+id/ll_flls"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             android:id="@+id/fll_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,9 +30,9 @@
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/edit_password" />
 
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             android:id="@+id/fll_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,13 +49,13 @@
                 android:inputType="textPassword"
                 android:imeOptions="actionDone" />
 
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
 
         <View
             android:layout_width="wrap_content"
             android:layout_height="48dp" />
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             android:id="@+id/fll_trigger_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,9 +73,9 @@
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/edit_password" />
 
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             android:id="@+id/fll_trigger_focus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,13 +92,13 @@
                 android:inputType="text"
                 android:imeOptions="actionDone" />
 
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
 
         <View
             android:layout_width="wrap_content"
             android:layout_height="48dp" />
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             android:id="@+id/ffl_hero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,9 +116,9 @@
                 android:imeOptions="actionNext"
                 android:nextFocusDown="@+id/edit_password" />
 
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
 
-        <com.mrengineer13.fll.FloatingLabelLayout
+        <com.mrengineer13.fll.FloatingLabelEditText
             android:id="@+id/fll_villain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -134,7 +135,18 @@
                 android:inputType="text"
                 android:imeOptions="actionDone" />
 
-        </com.mrengineer13.fll.FloatingLabelLayout>
+        </com.mrengineer13.fll.FloatingLabelEditText>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/prog_gen_header"
+            android:id="@+id/sectionHeader" />
 
     </LinearLayout>
 
