@@ -300,7 +300,7 @@ public class FloatingLabelEditText extends FrameLayout {
                 return;
             }
 
-            if (TextUtils.isEmpty(s)) {
+            if (TextUtils.isEmpty(getText())) {
                 hideLabel();
             } else if (!getLabel().isShown()) {
                 showLabel();
