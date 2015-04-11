@@ -1,5 +1,9 @@
 # Floating Label Edit Text Pattern for Android
 
+# Usage
+Status: No longer activly maintained due to a plethora of floating label libraries.
+
+
 # Features
 
 1. Ability to edit EditText/FloatingLabelLayout in the layout
