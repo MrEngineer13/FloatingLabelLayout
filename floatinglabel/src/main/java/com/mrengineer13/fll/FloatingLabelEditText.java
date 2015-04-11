@@ -168,6 +168,7 @@ public class FloatingLabelEditText extends FrameLayout {
     protected void setEditText(EditText editText) {
         mEditText = editText;
 
+        mLabel.setTypeface(mEditText.getTypeface());
         mLabel.setText(mEditText.getHint());
 
         if (mHint == null) {
