@@ -1,7 +1,7 @@
 # Floating Label Edit Text Pattern for Android
 
-# Usage
-Status: No longer activly maintained due to a plethora of floating label libraries.
+# Status
+No longer activly maintained due to a plethora of floating label libraries.
 
 
 # Features
